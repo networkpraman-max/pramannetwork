@@ -24,7 +24,7 @@ import {
 import Navbar from '../components/Navbar.tsx';
 import { supabase } from '../utils/supabaseClient.ts';
 import SEO from '../components/SEO.tsx';
-
+import Footer from '../components/Footer.tsx';
 // Dynamic imports for Recharts to split vendor chunks and load on-demand
 const DashboardAreaChart = lazy(() =>
   import('../components/DashboardCharts.tsx').then((module) => ({ default: module.DashboardAreaChart }))
@@ -1349,7 +1349,8 @@ export default function Dashboard() {
       </div>
 
       {/* Footer */}
-      <footer className="border-t border-zinc-900 bg-zinc-950 py-8 mt-12">
+      <Footer/>
+      {/* <footer className="border-t border-zinc-900 bg-zinc-950 py-8 mt-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center space-x-2">
@@ -1371,7 +1372,7 @@ export default function Dashboard() {
             </div>
           </div>
         </div>
-      </footer>
+      </footer> */}
     </div>
   );
 }
