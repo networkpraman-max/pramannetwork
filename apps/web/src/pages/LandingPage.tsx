@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO.tsx';
@@ -14,7 +15,9 @@ import {
   UserCheck,
   Zap,
   Globe,
-  Database
+  Database,
+  Copy,
+  Check
 } from 'lucide-react';
 import Navbar from '../components/Navbar.tsx';
 import Footer from '../components/Footer.tsx';
@@ -23,6 +26,28 @@ import BentoGrid from '../components/BentoGrid.tsx';
 import DualGateway from '../components/DualGateway.tsx';
 
 export default function LandingPage() {
+  const [isCopied, setIsCopied] = useState(false);
+
+  const handleCopyCode = async () => {
+    const code = `import { PramanAuth } from '@praman/sdk';
+
+const auth = new PramanAuth({
+  clientId: 'your_api_key',
+  livenessMode: 'strict',
+  network: 'polygon'
+});
+
+// Triggers ZK-Proof generation in-browser
+const { jwt, userFaceHash } = await auth.login();`;
+    try {
+      await navigator.clipboard.writeText(code);
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy code: ', err);
+    }
+  };
+
   // Framer Motion spring and stagger configurations
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -318,7 +343,13 @@ export default function LandingPage() {
                       <div className="w-2.5 h-2.5 rounded-full bg-green-500/80 hover:bg-green-500 cursor-pointer" />
                     </div>
                     <div className="text-[10px] text-zinc-400 font-mono">praman-auth-sample.ts</div>
-                    <div className="w-12" />
+                    <button 
+                      onClick={handleCopyCode}
+                      className="text-zinc-400 hover:text-white transition-colors"
+                      title="Copy code"
+                    >
+                      {isCopied ? <Check size={14} className="text-green-400" /> : <Copy size={14} />}
+                    </button>
                   </div>
                   
                   {/* Syntax highlighted container */}
