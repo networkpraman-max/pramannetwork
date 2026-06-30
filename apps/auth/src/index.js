@@ -1,8 +1,6 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import path from "path";
-import { fileURLToPath } from "url";
 import { verifyApiKey } from "./middlewares/apiKeyAuth.js";
 import { sandboxRateLimiter } from "./utils/rateLimiter.js";
 import { createClient } from '@supabase/supabase-js';
@@ -12,11 +10,19 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const app = express();
+
+// 1. Strict Middleware Ordering: trust proxy MUST be set first
 app.set('trust proxy', 1);
 
-// Parse JSON and URL-encoded bodies immediately
+// 2. Parse request bodies immediately after trust proxy and BEFORE any other logic
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// 3. Request Body Debugging middleware
+app.use((req, res, next) => {
+  console.log('DEBUG Body:', req.body);
+  next();
+});
 
 const allowedOrigins = [
   'https://www.praman.network', 
@@ -35,9 +41,9 @@ const corsOptions = {
   credentials: true
 };
 
-// Apply remaining global middleware (CORS & Rate limiting)
+// 4. Apply CORS and Rate Limiting
 app.use(cors(corsOptions));
-app.use(sandboxRateLimiter); // Applied after body parsers
+app.use(sandboxRateLimiter);
 
 const supabaseUrl = process.env.SUPABASE_URL || 'https://tkmduvvaygyucegqlhlq.supabase.co';
 const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SERVICE_KEY || 'placeholder-key';
@@ -68,7 +74,6 @@ app.get("/", (req, res) => {
 // Protected Verification Route
 // Client SDK calls this POST request with proof data, passing x-api-key in headers
 app.post("/api/v1/verify-zk", verifyApiKey, async (req, res) => {
-  const { proof, publicInputs } = req.body;
   const origin = req.headers.origin || 'unknown';
   const apiKey = req.headers['x-api-key'];
 
@@ -76,6 +81,14 @@ app.post("/api/v1/verify-zk", verifyApiKey, async (req, res) => {
   console.log("Incoming Request - Origin:", origin, "API Key Present:", !!apiKey);
 
   try {
+    // Route Handler Fix: Verify if req.body exists before destructuring
+    if (!req.body) {
+      console.error("Body is undefined");
+      return res.status(400).json({ success: false, error: "Bad Request: Request body is undefined." });
+    }
+
+    const { proof, publicInputs } = req.body;
+
     // 1. ZK Proof Verification Logic (Yahan tumhara snarkjs/contract logic aayega)
     const isVerified = true; // Simulating verification logic
 
