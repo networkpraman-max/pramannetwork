@@ -116,6 +116,21 @@ export default function Navbar({ walletAddress, onConnectWallet, isConnecting }:
               <span>Docs</span>
               <ArrowUpRight className="h-3 w-3" />
             </a>
+
+            <Link
+              to="/contact"
+              className={`text-sm font-medium transition-all duration-300 hover:text-[#00F0FF] hover:text-glow-cyan relative py-1 ${
+                location.pathname === '/contact' ? 'text-[#00F0FF] text-glow-cyan' : 'text-slate-300'
+              }`}
+            >
+              Contact
+              {location.pathname === '/contact' && (
+                <motion.div
+                  layoutId="nav-underline"
+                  className="absolute bottom-0 left-0 w-full h-[2px] bg-[#00F0FF] shadow-[0_0_8px_#00F0FF]"
+                />
+              )}
+            </Link>
           </nav>
 
           {/* Connect Wallet / Console CTAs */}
@@ -211,6 +226,14 @@ export default function Navbar({ walletAddress, onConnectWallet, isConnecting }:
               >
                 Docs
               </a>
+              
+              <Link
+                to="/contact"
+                onClick={() => setIsOpen(false)}
+                className="block px-3 py-2 text-sm font-semibold tracking-wider text-slate-300 hover:text-[#0DF2C9] uppercase font-mono"
+              >
+                Contact
+              </Link>
               
               <div className="pt-4 border-t border-white/5">
                 <Link to="/dashboard" onClick={() => setIsOpen(false)}>

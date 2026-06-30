@@ -4,6 +4,7 @@ import Dashboard from './pages/Dashboard.tsx';
 import PrivacyPolicy from './pages/PrivacyPolicy.tsx';
 import TermsOfUse from './pages/TermsOfUse.tsx';
 import ComingSoon from './pages/ComingSoon.tsx';
+import Contact from './pages/Contact.tsx';
 import AmbientSystem from './components/AmbientSystem.tsx';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfUse />} />
           <Route path="/talent-coming-soon" element={<ComingSoon />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
     </Router>

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Activity } from 'lucide-react';
+import { Activity, Twitter, Linkedin } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -28,6 +28,27 @@ export default function Footer() {
             <p className="text-zinc-400 text-xs max-w-sm font-light leading-relaxed">
               Replacing Trust with Proof. Foundational Web3 infrastructure for biometric identity, Sybil resistance, and verifiable credentials.
             </p>
+
+            <div className="flex items-center space-x-4 pt-2">
+              <a 
+                href="https://x.com/PramanNetwork" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-zinc-400 hover:text-[#00F0FF] hover:drop-shadow-[0_0_8px_rgba(0,240,255,0.5)] transition-all duration-300 hover:scale-110"
+                title="Follow us on X"
+              >
+                <Twitter className="h-4.5 w-4.5" />
+              </a>
+              <a 
+                href="https://www.linkedin.com/company/praman-network/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-zinc-400 hover:text-[#00F0FF] hover:drop-shadow-[0_0_8px_rgba(0,240,255,0.5)] transition-all duration-300 hover:scale-110"
+                title="Connect on LinkedIn"
+              >
+                <Linkedin className="h-4.5 w-4.5" />
+              </a>
+            </div>
           </div>
 
           {/* Column 2: Developers */}
@@ -77,6 +98,9 @@ export default function Footer() {
               </li>
               <li>
                 <Link to="/terms" className="hover:text-[#0DF2C9] hover:text-glow-cyan transition-all duration-300">Terms of Use</Link>
+              </li>
+              <li>
+                <Link to="/contact" className="hover:text-[#0DF2C9] hover:text-glow-cyan transition-all duration-300">Contact Us</Link>
               </li>
               <li>
                 <a href="https://github.com/Praman-Network/AuthPramanNetwork?tab=GPL-3.0-1-ov-file" target="_blank" rel="noreferrer" className="hover:text-[#0DF2C9] hover:text-glow-cyan transition-all duration-300">GPL-3.0 License</a>
