@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Briefcase, ShieldCheck, ArrowLeft } from 'lucide-react';
+import SEO from '../components/SEO.tsx';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar.tsx';
 import Footer from '../components/Footer.tsx';
@@ -9,7 +10,11 @@ export default function ComingSoon() {
     <div className="flex flex-col min-h-screen">
       <Navbar />
 
-      <main className="relative flex-1 bg-transparent text-white pt-36 pb-24 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center">
+      <main id="main-content" className="relative flex-1 bg-transparent text-white pt-36 pb-24 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center">
+        <SEO 
+          title="Praman Talent - Decentralized Hiring"
+          description="Praman Talent is a professional credential verification network built on the Praman protocol. Verify skills, resumes, and code metrics cryptographically without fraud."
+        />
         
         {/* Coming Soon Alert Tag */}
         <motion.div

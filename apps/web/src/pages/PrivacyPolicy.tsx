@@ -1,13 +1,18 @@
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar.tsx';
 import Footer from '../components/Footer.tsx';
+import SEO from '../components/SEO.tsx';
 
 export default function PrivacyPolicy() {
   return (
     <div className="flex flex-col min-h-screen w-full items-center justify-between">
       <Navbar />
 
-      <main className="relative flex-1 bg-transparent text-white pt-32 pb-20 w-full max-w-4xl px-4 sm:px-6 lg:px-8">
+      <main id="main-content" className="relative flex-1 bg-transparent text-white pt-32 pb-20 w-full max-w-4xl px-4 sm:px-6 lg:px-8">
+        <SEO 
+          title="Privacy Policy"
+          description="Praman Network Privacy Policy. Learn how our protocol verifies identities client-side and maintains biometric credentials private without database collection."
+        />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

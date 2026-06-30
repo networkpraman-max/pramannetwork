@@ -57,6 +57,8 @@ export default function Navbar({ walletAddress, onConnectWallet, isConnecting }:
               alt="Praman Network Logo" 
               width="32"
               height="32"
+              fetchPriority="high"
+              decoding="async"
               className="h-8 w-8 object-contain mix-blend-screen transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 filter drop-shadow-[0_0_8px_rgba(13,242,201,0.4)]"
             />
             <div className="flex flex-col">

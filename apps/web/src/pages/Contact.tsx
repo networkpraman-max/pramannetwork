@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import SEO from '../components/SEO.tsx';
 import { 
   Mail, 
   Linkedin, 
@@ -144,7 +145,18 @@ export default function Contact() {
   };
 
   return (
-    <main className="relative min-h-screen bg-transparent text-white overflow-hidden">
+    <main id="main-content" className="relative min-h-screen bg-transparent text-white overflow-hidden">
+      <SEO 
+        title="Contact Us"
+        description="Get in touch with the Praman Network team for partnerships, developer support, and integration requests."
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": "Contact Praman Network",
+          "url": "https://praman.network/contact",
+          "description": "Contact form and developer relations endpoints for the Praman Network protocol."
+        }}
+      />
       {/* Background Web3 Matrix Grid */}
       <div className="absolute inset-0 bg-web3-grid pointer-events-none z-0 opacity-40" />
       <div className="absolute inset-0 bg-vignette pointer-events-none z-0" />

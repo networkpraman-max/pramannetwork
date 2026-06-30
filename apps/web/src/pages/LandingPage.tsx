@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO.tsx';
 import { 
   ShieldCheck, 
   Network, 
@@ -86,7 +87,27 @@ export default function LandingPage() {
   ];
 
   return (
-    <main className="relative min-h-screen bg-transparent text-white overflow-hidden">
+    <main id="main-content" className="relative min-h-screen bg-transparent text-white overflow-hidden">
+      <SEO 
+        title="Replacing Trust with Proof"
+        description="Praman Network is the decentralized protocol for Zero-Knowledge Authentication, Biometric Privacy, and Web3 Identity verification. Build and integrate zero-knowledge credentials seamlessly."
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Praman Network",
+            "url": "https://praman.network/",
+            "description": "Zero-Knowledge Authentication and Biometric Privacy protocol for Web3 Identity."
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Praman Network",
+            "url": "https://praman.network/",
+            "logo": "https://praman.network/logo.png"
+          }
+        ]}
+      />
 
       {/* Main Content Area */}
       <div className="relative z-10 flex flex-col justify-between min-h-screen">

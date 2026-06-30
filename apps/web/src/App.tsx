@@ -24,6 +24,9 @@ function App() {
   return (
     <Router>
       <div className="min-h-screen bg-[#05050a] text-slate-100 font-sans selection:bg-[#0DF2C9]/30 overflow-x-hidden relative">
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#0DF2C9] focus:text-black focus:font-bold focus:rounded-lg transition-all font-mono text-xs">
+          Skip to main content
+        </a>
         <AmbientSystem />
         
         <Suspense fallback={<LoadingFallback />}>

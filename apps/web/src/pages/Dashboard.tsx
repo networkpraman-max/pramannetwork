@@ -23,6 +23,7 @@ import {
 } from 'lucide-react';
 import Navbar from '../components/Navbar.tsx';
 import { supabase } from '../utils/supabaseClient.ts';
+import SEO from '../components/SEO.tsx';
 
 // Dynamic imports for Recharts to split vendor chunks and load on-demand
 const DashboardAreaChart = lazy(() =>
@@ -540,6 +541,11 @@ export default function Dashboard() {
 
   return (
     <div className="relative min-h-screen z-10 flex flex-col bg-zinc-950 text-slate-100 font-sans select-none selection:bg-[#00F0FF]/30">
+      <SEO 
+        title="Developer Console"
+        description="Praman Network developer dashboard console. Configure API keys, whitelist endpoints, whitelist domains, and view live verification audits."
+        robots="noindex, nofollow"
+      />
       
       {/* Toast Notification Container */}
       <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
@@ -681,7 +687,7 @@ export default function Dashboard() {
         </aside>
 
         {/* Main Content Area */}
-        <main className="flex-grow space-y-8 min-w-0">
+        <main id="main-content" className="flex-grow space-y-8 min-w-0">
           {/* Header Banner */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-zinc-800/80 pb-6">
             <div>
@@ -1347,7 +1353,15 @@ export default function Dashboard() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center space-x-2">
-              <img src="/logo.png" alt="Praman Network Logo" className="h-4 w-4 object-contain" />
+              <img 
+                src="/logo.png" 
+                alt="Praman Network Logo" 
+                width="16"
+                height="16"
+                loading="lazy"
+                decoding="async"
+                className="h-4 w-4 object-contain" 
+              />
               <span className="text-slate-500 text-xs font-display font-bold uppercase tracking-wider">
                 Praman Dev Hub
               </span>
