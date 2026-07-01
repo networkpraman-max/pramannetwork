@@ -1,72 +1,121 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Praman Network | Replacing Trust with Proof</title>
-    <meta name="description" content="Praman Network is the decentralized protocol for Zero-Knowledge Authentication, Biometric Privacy, and Web3 Identity verification. Build and integrate zero-knowledge credentials seamlessly." />
-    <meta name="keywords" content="Zero-Knowledge Authentication, Biometric Privacy, Web3 Identity, Praman Network, zk-SNARK, Sybil resistance, biometric ZK-proofs" />
-    <link rel="canonical" href="https://praman.network/" />
 
-    <!-- Open Graph (Facebook / LinkedIn) -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://praman.network/" />
-    <meta property="og:title" content="Praman Network | Replacing Trust with Proof" />
-    <meta property="og:description" content="Praman Network is the decentralized protocol for Zero-Knowledge Authentication, Biometric Privacy, and Web3 Identity verification." />
-    <meta property="og:image" content="https://praman.network/logo.png" />
-    <meta property="og:site_name" content="Praman Network" />
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Praman Network | ZK Biometric Auth for Web3</title>
+  <meta name="description"
+    content="Praman Network is the decentralized protocol for Zero-Knowledge Authentication, Biometric Privacy, and Web3 Identity verification. Build and integrate zero-knowledge credentials seamlessly." />
+  <meta name="keywords"
+    content="Zero-Knowledge Authentication, Biometric Privacy, Web3 Identity, Praman Network, zk-SNARK, Sybil resistance, biometric ZK-proofs" />
+  <link rel="canonical" href="https://praman.network/" />
 
-    <!-- Twitter (X) Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://praman.network/" />
-    <meta name="twitter:title" content="Praman Network | Replacing Trust with Proof" />
-    <meta name="twitter:description" content="Praman Network is the decentralized protocol for Zero-Knowledge Authentication, Biometric Privacy, and Web3 Identity verification." />
-    <meta name="twitter:image" content="https://praman.network/logo.png" />
-    <meta name="twitter:site" content="@praman_network" />
+  <!-- Open Graph (Facebook / LinkedIn) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://praman.network/" />
+  <meta property="og:title" content="Praman Network | ZK Biometric Auth for Web3" />
+  <meta property="og:description"
+    content="Praman Network is the decentralized protocol for Zero-Knowledge Authentication, Biometric Privacy, and Web3 Identity verification." />
+  <meta property="og:image" content="https://praman.network/logo.png" />
+  <meta property="og:site_name" content="Praman Network" />
 
-    <!-- Structured Data: JSON-LD -->
-    <script type="application/ld+json">
-      [
-        {
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          "name": "Praman Network",
-          "url": "https://praman.network/",
-          "description": "Zero-Knowledge Authentication and Biometric Privacy protocol for Web3 Identity."
-        },
-        {
-          "@context": "https://schema.org",
-          "@type": "SoftwareApplication",
-          "name": "Praman Network SDK",
-          "applicationCategory": "SecurityApplication",
-          "operatingSystem": "All",
-          "downloadUrl": "https://github.com/praman-network",
-          "softwareVersion": "1.0.0",
-          "description": "Decentralized protocol for biometric zero-knowledge authentication and Sybil-resistant credentials.",
-          "offers": {
-            "@type": "Offer",
-            "price": "0.00",
-            "priceCurrency": "USD"
-          }
-        }
+  <!-- Twitter (X) Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://praman.network/" />
+  <meta name="twitter:title" content="Praman Network | ZK Biometric Auth for Web3" />
+  <meta name="twitter:description"
+    content="Praman Network is the decentralized protocol for Zero-Knowledge Authentication, Biometric Privacy, and Web3 Identity verification." />
+  <meta name="twitter:image" content="https://praman.network/logo.png" />
+  <meta name="twitter:site" content="@PramanNetwork" />
+
+  <!-- Structured Data: JSON-LD -->
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://praman.network/#organization",
+      "name": "Praman Network",
+      "url": "https://praman.network",
+      "logo": "https://praman.network/logo.png",
+      "description": "Praman Network is building Zero-Knowledge biometric authentication infrastructure for Web3.",
+      "sameAs": [
+        "https://www.linkedin.com/company/praman-network/",
+        "https://x.com/PramanNetwork",
+        "https://github.com/Praman-Network"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Rahul Chaudhary",
+        "url": "https://www.linkedin.com/in/rahul-chaudhary-b31b2a297/"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://praman.network/#founder",
+      "name": "Rahul Chaudhary",
+      "jobTitle": "Founder & Founding Engineer",
+      "worksFor": {
+        "@id": "https://praman.network/#organization"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/rahul-chaudhary-b31b2a297/",
+        "https://github.com/Rahulchaudharyji2",
+        "https://x.com/ChaudharyjiTec4"
       ]
-    </script>
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://praman.network/#website",
+      "url": "https://praman.network",
+      "name": "Praman Network",
+      "publisher": {
+        "@id": "https://praman.network/#organization"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Praman Network SDK",
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "All",
+      "downloadUrl": "https://github.com/praman-network/sdk",
+      "softwareVersion": "1.0.0",
+      "description": "SDK for Zero-Knowledge biometric authentication and Web3 identity.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+  ]
+}
+</script>
 
-    <!-- Web Manifest -->
-    <link rel="manifest" href="/site.webmanifest" />
+  <!-- Web Manifest -->
+  <link rel="manifest" href="/site.webmanifest" />
 
-    <!-- Google Fonts: Space Grotesk and Inter (Non-blocking Asynchronous Loading) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    </noscript>
-  </head>
-  <body class="bg-darkbg text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-neoncyan/30 selection:text-white">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+  <!-- Google Fonts: Space Grotesk and Inter (Non-blocking Asynchronous Loading) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet">
+  </noscript>
+</head>
+
+<body
+  class="bg-darkbg text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-neoncyan/30 selection:text-white">
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
 </html>
